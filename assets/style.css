@@ -1,0 +1,299 @@
+:root {
+  /*********** MODO CLARO ***********/
+  --color-light-50: #f8fafc;
+
+  /*********** MODO DARK ***********/
+  --color-dark-50: #ffffff; /* Alterado para um tom mais escuro de cinza */
+  --color-dark-100: #1c1c1c; /* Alterado para um tom mais escuro de preto */
+}
+
+body {
+  background: var(--color-light-50);
+  color: #000; /* Cor do texto padrão, pode ser ajustada conforme necessário */
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.conteudo {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 450px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background: #2b2a2a;
+  padding: 55px;
+  border-radius: 12px;
+}
+/* dark mode config css dentro do .conteudo*/
+#mode_icon {
+  display: flex; /* lockar posicao com ... icon dark */
+  align-items: center;
+  justify-content: space-between; /* SEPARA LOGIN - icon dark header */
+  position: relative;
+  left: -20px; /* posicao icon dark */
+  top: -40px; /* posicao icon dark */
+  font-size: 30px; /* tamanho icon dark */
+  cursor: pointer;
+}
+
+.topo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 35px;
+}
+
+.topo input {
+  width: 350px;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #191818;
+  outline: none;
+  font-size: 1.2rem;
+  background: #191818;
+  color: #fff;
+}
+
+.topo button {
+  width: 45px;
+  border-radius: 12px;
+  border: 1px solid #191818;
+  background: #191818;
+  color: #fff;
+  outline: none;
+}
+
+.topo button:hover {
+  background: #1f1e1e;
+  cursor: pointer;
+}
+
+#listaTarefas {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#listaTarefas li {
+  padding: 20px;
+  background: #191818;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  color: #fff; /* Adicione esta linha para definir a cor do texto no modo escuro */
+}
+
+.btnAcao {
+  border-radius: 20px;
+  border: 1px solid #191818;
+  width: 38px;
+  height: 38px;
+  margin-right: 8px;
+  cursor: pointer;
+  background: #2b2a2a;
+  color: #fff;
+  outline: none;
+}
+
+.btnAcao:hover {
+  background: #3c3a3a;
+}
+
+/* Adicione estas regras para o modo claro */
+.conteudo:not(.dark) .topo input {
+  background: #fff;
+  color: #000;
+}
+
+.conteudo:not(.dark) .topo button,
+.conteudo:not(.dark) .btnAcao {
+  background: #fff;
+  color: #000;
+}
+
+/* Adicione estas regras para o modo claro */
+.conteudo:not(.dark) #listaTarefas li {
+  background: #fff;
+  color: #000;
+}
+
+/* Adicione estas regras para o modo claro */
+.conteudo:not(.dark) #janelaEdicao {
+  background: #fff;
+  color: #000;
+}
+
+.textoTarefa {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 290px;
+  white-space: nowrap;
+}
+
+#janelaEdicao {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background: #191818;
+  border: 1px solid #2f2e2e;
+  width: 415px;
+  border-radius: 12px;
+  z-index: 200;
+  display: none;
+  color: #fff; /* Adicione esta linha para definir a cor do texto no modo escuro */
+}
+
+#janelaEdicao.abrir {
+  display: block !important;
+}
+
+#janelaEdicaoFundo {
+  position: fixed;
+  top: 0;
+  background-color: #000;
+  bottom: 0;
+  left: 0;
+  opacity: 0.9;
+  z-index: 100;
+  right: 0;
+  display: none;
+}
+
+#janelaEdicaoFundo.abrir {
+  display: block !important;
+}
+
+#janelaEdicaoBtnFechar {
+  position: absolute;
+  top: -25px;
+  right: -18px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #2d2c2c;
+  background: #2d2c2c;
+  color: #fff;
+  outline: none;
+}
+
+form {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.frm-linha {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.frm-linha label {
+  margin-bottom: 7px;
+}
+
+.frm-linha input {
+  padding: 15px;
+  border-radius: 12px;
+  outline: none;
+  border: 1px solid #191818;
+  font-size: 1.2rem;
+  background: #2d2c2c;
+  color: #fff;
+}
+
+.frm-linha button {
+  background: #2d2c2c;
+  border: 1px solid #191818;
+  padding: 7px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  color: #ccc;
+  cursor: pointer;
+  height: 50px;
+  font-size: 1.3rem;
+  outline: none;
+}
+
+.frm-linha button:hover {
+  background: #3c3a3a;
+}
+
+/*********** DARK MODE ***********/
+.conteudo {
+  color: var(--color-light-50); /* AJUSTE CORES AO INVERTER */
+  background-color: var(--color-dark-100); /* COR DOS ITENS P INVERTER */
+  animation: light-to-dark-background 0.3s ease-in-out; /* ANIMACAO INVERTER */
+}
+
+/* Adaptação para Modo Escuro */
+body.dark-mode {
+  color: #fff; /* Cor do texto no modo escuro */
+  background-color: var(--color-dark-100); /* Cor de fundo no modo escuro */
+}
+
+.dark-mode #mode_icon {
+  color: #fff; /* Cor do ícone no modo escuro */
+}
+
+.dark-mode .topo input {
+  background-color: #ffffff; /* Cor de fundo no modo escuro */
+  color: #fff; /* Cor do texto no modo escuro */
+  /*Adicione estilos específicos para a entrada de texto no modo escuro */
+}
+
+.dark .topo input {
+  color: #000; /* Cor do texto no modo escuro (pode ser ajustada conforme necessário) */
+}
+
+.dark-mode .topo button {
+  background-color: #ffffff; /* Cor de fundo no modo escuro */
+  color: #fff; /* Cor do texto no modo escuro */
+  /*Adicione estilos específicos para o botão no modo escuro */
+}
+
+.dark-mode #listaTarefas li {
+  background-color: #ffffff; /* Cor de fundo no modo escuro */
+  color: #fff; /* Cor do texto no modo escuro */
+  /* Adicione estilos específicos para os itens da lista no modo escuro */
+}
+
+.dark-mode .btnAcao {
+  background-color: #3c3a3a; /* Cor de fundo no modo escuro ao passar o mouse */
+  color: #fff; /* Cor do texto no modo escuro */
+  /* // Adicione outros estilos específicos para os botões de ação no modo escuro*/
+}
+
+dark-mode #janelaEdicao {
+  background-color: #2d2c2c; /* Cor de fundo no modo escuro */
+  color: #fff; /* Cor do texto no modo escuro */
+  /*// Adicione outros estilos específicos para a janela de edição no modo escuro*/
+}
+
+/* ANIMACAO TRANSICAO CLARO -> ESCURO */
+/* ANIMACAO TRANSICAO RETORNO CLARO -> ESCURO */
+@keyframes light-to-dark-background {
+  0% {
+    background-color: var(--color-light-50);
+  }
+  100% {
+    background-color: var(--color-dark-100);
+  }
+}
+
+/* ANIMACAO TRANSICAO ESCURO -> CLARO */
+@keyframes dark-to-light-background {
+  0% {
+    background-color: var(--color-dark-100);
+  }
+  100% {
+    background-color: var(--color-light-50);
+  }
+}
